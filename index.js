@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const apiai = require('apiai')('8acec332434947989510c58d31621d44');
-const server = app.listen(5000);
+const server = app.listen(process.env.PORT ||5000);
 const io = require('socket.io')(server);
 io.on('connection', function(socket){
   console.log('a user connected');
